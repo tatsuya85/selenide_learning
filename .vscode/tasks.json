@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Test",
+      "type": "shell",
+      "command": "mvn test -Dtest=Weather -Darea=\"東京\"",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "area",
+      "description": "area",
+      "default": "\"東京\"",
+      "type": "promptString"
+    }
+  ]
+}
