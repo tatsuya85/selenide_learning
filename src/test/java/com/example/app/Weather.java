@@ -33,9 +33,10 @@ class Weather {
 
     $("#searchText").setValue(ward);
     $("#yjw_button_search").click();
+    $x("//*[@id='rsltmuni']/div[2]/table/tbody/tr/td/a").shouldHave(text(area));
     $x("//a[text()= '" + ward + "']").click();
 
-    $x("//*[@id='cat-pass']/p/text()[4]").shouldHave(text(area));
+
 
     close();
 
