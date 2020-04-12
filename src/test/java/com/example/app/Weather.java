@@ -35,7 +35,7 @@ class Weather {
     $("#yjw_button_search").click();
     $x("//a[text()= '" + ward + "']").click();
 
-    $x("//*[@id='cat-pass']/p/text()[4]").shouldHave(text(area))
+    $x("//*[@id='cat-pass']/p/text()[4]").shouldHave(text(area));
 
     close();
 
