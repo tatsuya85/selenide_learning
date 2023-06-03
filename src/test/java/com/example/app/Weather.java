@@ -8,6 +8,7 @@ import com.codeborne.selenide.WebDriverRunner;
 // import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.openqa.selenium.By;
 
 
 class Weather {
@@ -20,23 +21,24 @@ class Weather {
     // String area = System.getProperty("area");
 
     Configuration.browser = WebDriverRunner.CHROME;
+    Configuration.screenshots = false; // 失敗時にスクリーンショットを撮る
+    Configuration.savePageSource = false; // スクリーショット取得時にHTMLファイルも保存する
     // Configuration.headless = true;
 
     // Googleトップページ
     open("https://www.google.co.jp/");
 
     // "天気"を検索
-    $("input[type=text]").val("天気").pressEnter();
+    // $("#input").val("天気").pressEnter();
+    $(By.name("q")).val("天気").pressEnter();
 
-    // Youtube検索ページへ飛ぶ
+    // 天気検索ページへ飛ぶ
     $x("//a[@href='https://weather.yahoo.co.jp/weather/jp/13/4410/13120.html']").click();
 
     $("#searchText").setValue(ward);
     $("#yjw_button_search").click();
     $x("//*[@id='rsltmuni']/div[2]/table/tbody/tr/td/a").shouldHave(text(area));
     $x("//a[text()= '" + ward + "']").click();
-
-
 
     close();
 
