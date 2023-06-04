@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run selenide
+          name: run-selenide
           command: mvn clean test -Dtest=Weather
 
 # Orchestrate jobs using workflows
