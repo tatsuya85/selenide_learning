@@ -23,7 +23,7 @@ class Weather {
     Configuration.browser = WebDriverRunner.CHROME;
     Configuration.screenshots = false; // 失敗時にスクリーンショットを撮る
     Configuration.savePageSource = false; // スクリーショット取得時にHTMLファイルも保存する
-    // Configuration.headless = true;
+    Configuration.headless = true;
 
     // Googleトップページ
     open("https://www.google.co.jp/");
